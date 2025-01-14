@@ -1,4 +1,4 @@
-package rest_api
+package main
 
 import (
 	config2 "RestApi/config"
