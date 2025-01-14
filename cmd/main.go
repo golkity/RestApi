@@ -1,10 +1,11 @@
 package main
 
 import (
-	config2 "RestApi/config"
+	"RestApi/config"
 	"RestApi/internal/http/server"
 	"RestApi/pkg/logger"
 	"context"
+	"errors"
 	"log"
 	"net/http"
 	"os"
@@ -27,7 +28,7 @@ func gracefulShutdown(srv *http.Server, log *logger.Logger) {
 }
 
 func main() {
-	config, err := config2.LoadConfig("config.json")
+	config, err := config.LoadConfig("config/config.json")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -43,7 +44,7 @@ func main() {
 
 	go func() {
 		log.Info("Starting server on port " + config.ServerPort)
-		if err := srv.ListenAndServe(); err != nil && err != http.ErrServerClosed {
+		if err := srv.ListenAndServe(); err != nil && !errors.Is(err, http.ErrServerClosed) {
 			log.Fatal("Server failed to start")
 		}
 	}()
