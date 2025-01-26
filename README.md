@@ -3,11 +3,12 @@
 [![Go](https://img.shields.io/badge/go-%3E%3D%201.20-blue)](https://go.dev)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE.txt)
 
->[!MPORTANT]
+>[!IMPORTANT]
 > Rest Api - rest api server для магазина книг, который получает такие запросы как:
 > `Get`,`Add`,`Delet`,`books`.
 
->[!TIP] 200 Ok
+>[!TIP] 
+> 200(Ok)
 > Прмер правильного ряда запрсоов
 > 1) Тут мы добавляем книгу
 > ```shell
@@ -29,7 +30,7 @@
 > [{"id":1,"title":"Пример книги","author":"Иван Иванов","price":0}]
 > ```
 
->[!INFO]<br>
+>[!TIP]<br>
 > Работа логгера<br>
 > ![img.png](img.png)
 

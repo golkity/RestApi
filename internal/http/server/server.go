@@ -17,7 +17,6 @@ func RegRoutes(mux *http.ServeMux, log *logger.Logger) {
 	mux.HandleFunc("/api/v1/books/update", bookHandler.UpdateBook)
 	mux.HandleFunc("/api/v1/books/delete", bookHandler.DeleteBook)
 
-	// Health check
 	mux.HandleFunc("/api/v1/health", func(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusOK)
 		w.Write([]byte("Health server - OK"))
