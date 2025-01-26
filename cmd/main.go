@@ -28,7 +28,7 @@ func gracefulShutdown(srv *http.Server, log *logger.Logger) {
 }
 
 func main() {
-	config, err := config.LoadConfig("config/config.json")
+	config, err := config.LoadConfig("config.json")
 	if err != nil {
 		log.Fatal(err)
 	}
